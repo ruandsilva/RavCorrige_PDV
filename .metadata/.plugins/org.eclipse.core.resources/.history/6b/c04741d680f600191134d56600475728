@@ -1,0 +1,27 @@
+package br.com.correcaopdv.service;
+
+import java.sql.SQLException;
+
+import br.com.correcaopdv.repository.Repository;
+
+public class Service {
+	
+	public Repository repository ;
+	
+	public Service() throws SQLException {
+		repository = new Repository();
+	}
+	
+	public void alterarDetParaZero(String banco) throws SQLException {
+		this.repository.zerarBasesDeCalculo(banco);
+	}
+	
+	public ArrayList<Produto> buscarProdsComanda(String banco) throws SQLException {
+		return this.repository.buscarProdsComanda(banco);
+	}
+	
+	public void alterarParaConcertar(String banco, Produto produto) throws SQLException {
+		this.repository.alterarParaConcertar(banco, produto);
+	}
+
+}

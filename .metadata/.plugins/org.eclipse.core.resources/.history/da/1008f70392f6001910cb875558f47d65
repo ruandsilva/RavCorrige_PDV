@@ -1,0 +1,201 @@
+package br.com.correcaopdv.controller;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.Image;
+import java.util.Properties;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
+
+import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
+import com.jtattoo.plaf.hifi.HiFiLookAndFeel;
+import com.jtattoo.plaf.texture.TextureLookAndFeel;
+
+import br.com.correcaopdv.service.Service;
+
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.Font;
+import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.awt.event.ActionEvent;
+
+public class Controller extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtNota;
+	private Service service;
+	private JTextField txtBanco;
+	private static String banco;
+	
+	public static void main(String[] args) {
+		
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					
+					//Properties props = new Properties();  
+				    //props.put("logoString", "Seu Nome");  
+				    //AluminiumLookAndFeel().setCurrentTheme(props);
+				    
+				    UIManager.setLookAndFeel(new HiFiLookAndFeel());
+				    (new Controller()).setVisible(true);
+					//Controller frame = new Controller();
+					//frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public Controller() {
+		
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 576, 500);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		
+		JLabel lblLogo = new JLabel();
+		lblLogo.setBounds(228, 12, 111, 106);
+		//////
+		ImageIcon icon = new ImageIcon(Controller.class.getResource("/br/com/correcaopdv/img/NFE.png"));
+		Image ima = icon.getImage();
+		Image imagem = ima.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(), Image.SCALE_DEFAULT);
+		ImageIcon ico = new ImageIcon(imagem);
+		contentPane.setLayout(null);
+		lblLogo.setIcon(ico);
+		contentPane.add(lblLogo);
+		
+		JButton btnBcVl = new JButton("BASE DE CALCULO E VALOR DE IMPOSTOS");
+		btnBcVl.setVisible(false);
+		btnBcVl.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				try {
+					
+					service = new Service();
+					
+					service.zerarBasesDeCalculo(banco);
+					
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		});
+		btnBcVl.setFont(new Font("Eras Medium ITC", Font.BOLD, 18));
+		btnBcVl.setBounds(60, 200, 442, 60);
+		contentPane.add(btnBcVl);
+		
+		JButton btnAusenciaG = new JButton("AUSENCIA DE TROCO GERAL");
+		btnAusenciaG.setVisible(false);
+		btnAusenciaG.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnAusenciaG.setFont(new Font("Eras Medium ITC", Font.BOLD, 18));
+		btnAusenciaG.setBounds(60, 271, 442, 60);
+		contentPane.add(btnAusenciaG);
+		
+		JButton btnAusenciaE = new JButton("AUSENCIA DE TROCO INDV");
+		btnAusenciaE.setVisible(false);
+		btnAusenciaE.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnAusenciaE.setFont(new Font("Eras Medium ITC", Font.BOLD, 18));
+		btnAusenciaE.setBounds(203, 342, 299, 60);
+		contentPane.add(btnAusenciaE);
+		
+		txtNota = new JTextField();
+		txtNota.setFont(new Font("Eras Medium ITC", Font.BOLD, 30));
+		txtNota.setBounds(60, 342, 139, 60);
+		txtNota.setVisible(false);
+		contentPane.add(txtNota);
+		txtNota.setColumns(10);
+		
+		JLabel lblUtilitarioDeAjustes = new JLabel("UTILITARIO DE AJUSTES DO MENEWPDV");
+		lblUtilitarioDeAjustes.setFont(new Font("Eras Medium ITC", Font.BOLD, 22));
+		lblUtilitarioDeAjustes.setBounds(60, 130, 442, 28);
+		contentPane.add(lblUtilitarioDeAjustes);
+		
+		txtBanco = new JTextField();
+		txtBanco.setFont(new Font("Eras Medium ITC", Font.BOLD, 18));
+		txtBanco.setColumns(10);
+		txtBanco.setBounds(12, 241, 542, 60);
+		contentPane.add(txtBanco);
+		
+		JLabel lblAbaixoCaminhoDo = new JLabel("Abaixo Caminho do NETUNO, voc\u00EA pode encontra-lo");
+		lblAbaixoCaminhoDo.setFont(new Font("Eras Medium ITC", Font.BOLD, 20));
+		lblAbaixoCaminhoDo.setBounds(12, 170, 542, 29);
+		contentPane.add(lblAbaixoCaminhoDo);
+		
+		ImageIcon iconC = new ImageIcon(Controller.class.getResource("/br/com/correcaopdv/img/config.png"));
+		Image imaC = iconC.getImage();
+		Image imagemC = imaC.getScaledInstance(40, 40, Image.SCALE_DEFAULT);
+		ImageIcon icoC = new ImageIcon(imagemC);
+		JButton btnConfig = new JButton(icoC);
+		btnConfig.setVisible(false);
+		
+		JLabel lblNoArquivoMenewini = new JLabel("no arquivo MENEW.INI:");
+		lblNoArquivoMenewini.setFont(new Font("Eras Medium ITC", Font.BOLD, 20));
+		lblNoArquivoMenewini.setBounds(12, 200, 542, 29);
+		contentPane.add(lblNoArquivoMenewini);
+		
+		JButton btnConfirmar = new JButton("CONFIRMAR");
+		btnConfirmar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//Aqueles que Aparecem
+				btnBcVl.setVisible(true);
+				btnAusenciaG.setVisible(true);
+				btnAusenciaE.setVisible(true);
+				txtNota.setVisible(true);
+				
+				//Aqueles que somem
+				btnConfirmar.setVisible(false);
+				lblAbaixoCaminhoDo.setVisible(false);
+				lblNoArquivoMenewini.setVisible(false);
+				txtBanco.setVisible(false);
+				
+				
+			}
+		});
+		btnConfirmar.setFont(new Font("Eras Medium ITC", Font.BOLD, 18));
+		btnConfirmar.setBounds(12, 312, 193, 60);
+		contentPane.add(btnConfirmar);
+		
+		//Ação do Botão Config
+		btnConfig.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//Aqueles que somem
+				btnBcVl.setVisible(false);
+				btnAusenciaG.setVisible(false);
+				btnAusenciaE.setVisible(false);
+				txtNota.setVisible(false);
+				
+				//Aqueles que Aparecem
+				btnConfirmar.setVisible(true);
+				lblAbaixoCaminhoDo.setVisible(true);
+				lblNoArquivoMenewini.setVisible(true);
+				txtBanco.setVisible(true);
+			}
+		});
+		btnConfig.setFont(new Font("Eras Medium ITC", Font.BOLD, 18));
+		btnConfig.setBounds(0, 0, 53, 49);
+		contentPane.add(btnConfig);
+	}
+}

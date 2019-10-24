@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands>
+	<add id="laf_1571939671959" name="Acryl" class-name="com.jtattoo.plaf.acryl.AcrylLookAndFeel" jar-path="C:\Users\Samurai Jack\Desktop\CORRECAO PDV\CorrecaoPdv\src\META-INF\lib\JTattoo-1.6.10.jar" category-id="JRE"/>
+	<add id="laf_1571939671971" name="Aero" class-name="com.jtattoo.plaf.aero.AeroLookAndFeel" jar-path="C:\Users\Samurai Jack\Desktop\CORRECAO PDV\CorrecaoPdv\src\META-INF\lib\JTattoo-1.6.10.jar" category-id="JRE"/>
+	<add id="laf_1571939671978" name="Aluminium" class-name="com.jtattoo.plaf.aluminium.AluminiumLookAndFeel" jar-path="C:\Users\Samurai Jack\Desktop\CORRECAO PDV\CorrecaoPdv\src\META-INF\lib\JTattoo-1.6.10.jar" category-id="JRE"/>
+	<add id="laf_1571939672012" name="Bernstein" class-name="com.jtattoo.plaf.bernstein.BernsteinLookAndFeel" jar-path="C:\Users\Samurai Jack\Desktop\CORRECAO PDV\CorrecaoPdv\src\META-INF\lib\JTattoo-1.6.10.jar" category-id="JRE"/>
+	<add id="laf_1571939672018" name="Fast" class-name="com.jtattoo.plaf.fast.FastLookAndFeel" jar-path="C:\Users\Samurai Jack\Desktop\CORRECAO PDV\CorrecaoPdv\src\META-INF\lib\JTattoo-1.6.10.jar" category-id="JRE"/>
+	<add id="laf_1571939672024" name="Graphite" class-name="com.jtattoo.plaf.graphite.GraphiteLookAndFeel" jar-path="C:\Users\Samurai Jack\Desktop\CORRECAO PDV\CorrecaoPdv\src\META-INF\lib\JTattoo-1.6.10.jar" category-id="JRE"/>
+	<add id="laf_1571939672029" name="HiFi" class-name="com.jtattoo.plaf.hifi.HiFiLookAndFeel" jar-path="C:\Users\Samurai Jack\Desktop\CORRECAO PDV\CorrecaoPdv\src\META-INF\lib\JTattoo-1.6.10.jar" category-id="JRE"/>
+	<add id="laf_1571939672038" name="Luna" class-name="com.jtattoo.plaf.luna.LunaLookAndFeel" jar-path="C:\Users\Samurai Jack\Desktop\CORRECAO PDV\CorrecaoPdv\src\META-INF\lib\JTattoo-1.6.10.jar" category-id="JRE"/>
+	<add id="laf_1571939672043" name="McWin" class-name="com.jtattoo.plaf.mcwin.McWinLookAndFeel" jar-path="C:\Users\Samurai Jack\Desktop\CORRECAO PDV\CorrecaoPdv\src\META-INF\lib\JTattoo-1.6.10.jar" category-id="JRE"/>
+	<add id="laf_1571939672050" name="Mint" class-name="com.jtattoo.plaf.mint.MintLookAndFeel" jar-path="C:\Users\Samurai Jack\Desktop\CORRECAO PDV\CorrecaoPdv\src\META-INF\lib\JTattoo-1.6.10.jar" category-id="JRE"/>
+	<add id="laf_1571939672055" name="Noire" class-name="com.jtattoo.plaf.noire.NoireLookAndFeel" jar-path="C:\Users\Samurai Jack\Desktop\CORRECAO PDV\CorrecaoPdv\src\META-INF\lib\JTattoo-1.6.10.jar" category-id="JRE"/>
+	<add id="laf_1571939672060" name="Smart" class-name="com.jtattoo.plaf.smart.SmartLookAndFeel" jar-path="C:\Users\Samurai Jack\Desktop\CORRECAO PDV\CorrecaoPdv\src\META-INF\lib\JTattoo-1.6.10.jar" category-id="JRE"/>
+	<add id="laf_1571939672069" name="Texture" class-name="com.jtattoo.plaf.texture.TextureLookAndFeel" jar-path="C:\Users\Samurai Jack\Desktop\CORRECAO PDV\CorrecaoPdv\src\META-INF\lib\JTattoo-1.6.10.jar" category-id="JRE"/>
+</commands>

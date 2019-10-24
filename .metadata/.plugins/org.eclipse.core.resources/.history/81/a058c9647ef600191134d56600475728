@@ -1,0 +1,49 @@
+package br.com.correcaopdv.repository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import br.com.correcaopdv.connection.Conexao;
+
+public class Repository {
+
+	private Connection con;
+	
+	private static String dataDe; 
+
+	public Repository() throws SQLException {
+		
+		//this.con = Conexao.getConnection();
+	}
+
+	public Connection getCon() {
+		return con;
+	}
+
+	public void setCon(Connection con) {
+		this.con = con;
+	}
+	
+	public boolean zerarBasesDeCalculo(String banco, String data) throws SQLException {
+	
+		this.con = Conexao.getConnection(banco);
+		
+		dataDe = data;
+		
+		String update = "update tbdetconta det set det.cancela = 0 where det.dt_mov >= '"+data+"' " ;
+		
+		PreparedStatement state = this.con.prepareStatement(update);
+		
+		//state.setString(1, data);
+		
+		boolean atualizado = state.executeUpdate() > 0;
+		state.close();
+		state.close();
+		
+		System.out.println("passou por aqui");
+		
+		return atualizado;
+		
+	}
+}
